@@ -51,13 +51,13 @@ switch (_side) do
 	case west:
 	{
 		_misc = [_misc] call DB_fnc_mresArray;
-		_query = format["INSERT INTO players (playerid, name, cash, bankacc, cop_gear, aliases) VALUES('%1', '%2', '%3', '%4', '%5', '%6')",_uid,_name,_money,_bank,_misc,_alias];
+		_query = format["INSERT INTO players (playerid, name, cash, bankacc, cop_gear, aliases, civ_gear) VALUES('%1', '%2', '%3', '%4', '%5', '%6', '""[]""')",_uid,_name,_money,_bank,_misc,_alias];
 	};
 	
 	case civilian:
 	{
 		if(typeName _misc == "BOOL") then {_misc = [_misc] call DB_fnc_bool;};
-		_query = format["INSERT INTO players (playerid, name, cash, bankacc, arrested, aliases, civ_gear) VALUES('%1', '%2', '%3', '%4', '%5', '%6','""[]""')",
+		_query = format["INSERT INTO players (playerid, name, cash, bankacc, cop_gear, arrested, aliases, civ_gear) VALUES('%1', '%2', '%3', '%4', '""[]""','%5', '%6','""[]""')",
 		_uid, //1
 		_name, //2 
 		_money,//3
