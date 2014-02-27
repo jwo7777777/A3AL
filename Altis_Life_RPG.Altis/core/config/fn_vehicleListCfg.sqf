@@ -203,7 +203,7 @@ switch (_shop) do
 		["C_Offroad_01_F",5000]];
 		_return set[count _return,
 		["C_SUV_01_F",20000]];
-		if(__GETC__(life_coplevel) > 2) then
+		if(__GETC__(life_coplevel_38747) > 2) then
 		{
 			_return set[count _return,
 			["B_MRAP_01_F",30000]];
@@ -216,7 +216,7 @@ switch (_shop) do
 		["C_Offroad_01_F",5000]];
 		_return set[count _return,
 		["C_SUV_01_F",20000]];
-		if(__GETC__(life_coplevel) > 2) then
+		if(__GETC__(life_coplevel_38747) > 2) then
 		{
 			_return set[count _return,
 			["B_MRAP_01_F",30000]];
@@ -229,7 +229,7 @@ switch (_shop) do
 		["C_Offroad_01_F",5000]];
 		_return set[count _return,
 		["C_SUV_01_F",20000]];
-		if(__GETC__(life_coplevel) > 2) then
+		if(__GETC__(life_coplevel_38747) > 2) then
 		{
 			_return set[count _return,
 			["B_MRAP_01_F",30000]];
@@ -242,7 +242,7 @@ switch (_shop) do
 		["C_Offroad_01_F",5000]];
 		_return set[count _return,
 		["C_SUV_01_F",20000]];
-		if(__GETC__(life_coplevel) > 2) then
+		if(__GETC__(life_coplevel_38747) > 2) then
 		{
 			_return set[count _return,
 			["B_MRAP_01_F",30000]];
@@ -303,7 +303,7 @@ switch (_shop) do
 	{
 		_return set[count _return,
 		["B_Heli_Light_01_F",75000]];
-		if(__GETC__(life_coplevel) > 2) then
+		if(__GETC__(life_coplevel_38747) > 2) then
 		{
 			_return set[count _return,
 			["B_Heli_Transport_01_F",200000]];
@@ -314,7 +314,7 @@ switch (_shop) do
 	{
 		_return set[count _return,
 		["B_Heli_Light_01_F",75000]];
-		if(__GETC__(life_coplevel) > 2) then
+		if(__GETC__(life_coplevel_38747) > 2) then
 		{
 			_return set[count _return,
 			["B_Heli_Transport_01_F",200000]];

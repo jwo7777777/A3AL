@@ -22,7 +22,7 @@ switch (true) do
 //Mine check
 if(_mine == "") exitWith {hint "You are not near a mine!"};
 if(vehicle player != player) exitWith {hint "You can't mine from inside a car!";};
-
+if (life_inv_pickaxe < 1) exitWith {hint "You don't have a pickaxe with which to mine!";}; // no pickaxe
 _diff = [_mine,_val,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 if(_diff == 0) exitWith {hint "Your inventory is full."};
 life_action_inUse = true;
