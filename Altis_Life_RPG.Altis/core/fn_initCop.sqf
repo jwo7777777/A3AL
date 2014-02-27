@@ -31,7 +31,7 @@ switch (true) do
 	{
 		switch (true) do
 		{
-			case(__GETC__(life_coplevel) > 0) : {}; // Do nothing
+			case(__GETC__(life_coplevel_38747) > 0) : {}; // Do nothing
 			case (__GETC__(life_adminlevel_877344) > 0) : {}; //Do nothing
 			default {endMission "Loser";};
 		};

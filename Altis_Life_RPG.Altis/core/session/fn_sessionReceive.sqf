@@ -39,7 +39,7 @@ switch (playerSide) do
 		if((getPlayerUID player) != (_session select 0)) exitWith {}; //Data didn't match.
 		life_cash = parseNumber(_session select 2);
 		life_atmcash = parseNumber(_session select 3);
-		__CONST__(life_coplevel,parseNumber(_session select 4));
+		__CONST__(life_coplevel_38747,parseNumber(_session select 4));
 		if(count (_session select 5) > 0) then
 		{
 			{
@@ -70,7 +70,7 @@ switch (playerSide) do
 		__CONST__(life_donator,parseNumber(_session select 7));
 		civ_gear = (_session select 8);
 		[] spawn life_fnc_civLoadGear;
-		__CONST__(life_coplevel,0);
+		__CONST__(life_coplevel_38747,0);
 	};
 };
 
