@@ -114,6 +114,22 @@ switch (playerSide) do
 		!life_action_in_use && (player distance (getMarkerPos "weed_1") < 60) && (vehicle player == player) && (life_carryWeight + (["cannabis"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 		life_actions = life_actions + [player addAction["Gather Cocaine",life_fnc_gatherCocaine,"",0,false,false,"",'
 		!life_action_in_use && (player distance (getMarkerPos "cocaine_1") < 150) && (vehicle player == player) && (life_carryWeight + (["cocaine"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+		life_actions = life_actions + [player addAction["Mine Copper",life_fnc_pickaxeUse,"",0,false,false,"",'
+		!life_action_in_use && (player distance (getMarkerPos "lead_1") < 30) && (vehicle player == player) && (life_carryWeight + (["copperore"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+		life_actions = life_actions + [player addAction["Mine Iron",life_fnc_pickaxeUse,"",0,false,false,"",'
+		!life_action_in_use && (player distance (getMarkerPos "iron_1") < 30) && (vehicle player == player) && (life_carryWeight + (["ironore"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+		life_actions = life_actions + [player addAction["Mine Salt",life_fnc_pickaxeUse,"",0,false,false,"",'
+		!life_action_in_use && (player distance (getMarkerPos "salt_1") < 120) && (vehicle player == player) && (life_carryWeight + (["salt"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+		life_actions = life_actions + [player addAction["Mine Sand",life_fnc_pickaxeUse,"",0,false,false,"",'
+		!life_action_in_use && (player distance (getMarkerPos "sand_1") < 75) && (vehicle player == player) && (life_carryWeight + (["sand"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+		life_actions = life_actions + [player addAction["Mine Diamonds",life_fnc_pickaxeUse,"",0,false,false,"",'
+		!life_action_in_use && (player distance (getMarkerPos "diamond_1") < 50) && (vehicle player == player) && (life_carryWeight + (["diamond"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+		life_actions = life_actions + [player addAction["Mine Oil",life_fnc_pickaxeUse,"",0,false,false,"",'
+		!life_action_in_use && (player distance (getMarkerPos "oil_1") < 40) && (vehicle player == player) && (life_carryWeight + (["oilu"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+		life_actions = life_actions + [player addAction["Mine Oil",life_fnc_pickaxeUse,"",0,false,false,"",'
+		!life_action_in_use && (player distance (getMarkerPos "oil_2") < 40) && (vehicle player == player) && (life_carryWeight + (["oilu"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+		life_actions = life_actions + [player addAction["Mine Rocks",life_fnc_pickaxeUse,"",0,false,false,"",'
+		!life_action_in_use && (player distance (getMarkerPos "rock_1") < 50) && (vehicle player == player) && (life_carryWeight + (["rock"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 		//Suicide alahsnackbar
 		life_actions = life_actions + [player addAction["Activate Suicide Vest",life_fnc_suicideBomb,"",0,false,false,"",' vest player == "V_HarnessOGL_brn" && alive player && playerSide == civilian && !life_istazed && !(player getVariable "restrained") && !(player getVariable "Escorting") && !(player getVariable "transporting")']];
 		//Rob person
