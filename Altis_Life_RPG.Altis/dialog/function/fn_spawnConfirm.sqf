@@ -18,7 +18,7 @@ if(count life_spawn_point == 0) then  // if there are no spawn points in the arr
 else
 {
 	_sp = life_spawn_point; // player indicated which one he wanted, so set _sp to that point
-}
+};
 	
 if(playerSide == civilian) then  // civilians may have buildings to spawn into
 {
