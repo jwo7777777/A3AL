@@ -6,7 +6,7 @@
 	Main functionality for pickaxe in mining.
 */
 closeDialog 0;
-private["_mine","_itemWeight","_diff","_itemName","_val","_listSize","_pApresent"];
+private["_mine","_itemWeight","_diff","_itemName","_val"];
 switch (true) do
 {
 	case (player distance (getMarkerPos "lead_1") < 30): {_mine = "copperore"; _val = 2;};
@@ -22,12 +22,7 @@ switch (true) do
 //Mine check
 if(_mine == "") exitWith {hint "You are not near a mine!"};
 if(vehicle player != player) exitWith {hint "You can't mine from inside a car!";};
-_listSize = lbSize 2005;
-if (_listSize == 0) exitWith {hint "You don't have a pickaxe with which to mine!";}; // actually you have nothing in your Y inventory
-_pApresent = false;
-for "_i" from 0 to {_listSize - 1} do { if (lbData[2005,_i] == "pickaxe") then {_pApresent = true;} }; // do you have a pickAxe?
-if (!_pApresent) exitWith {hint "You don't have a pickaxe with which to mine!";};
-
+if (life_inv_pickaxe < 1) exitWith {hint "You don't have a pickaxe with which to mine!";}; // no pickaxe
 _diff = [_mine,_val,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 if(_diff == 0) exitWith {hint "Your inventory is full."};
 life_action_inUse = true;
