@@ -19,6 +19,7 @@ class Life_Client_Core
 		class admingetID {};
 		class adminMenu {};
 		class adminQuery {};
+		class adminTPtoME {};
 	};
 	
 	class Actions
