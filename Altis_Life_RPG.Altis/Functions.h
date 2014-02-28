@@ -20,6 +20,7 @@ class Life_Client_Core
 		class adminMenu {};
 		class adminQuery {};
 		class adminTPtoME {};
+		class adminTPtoPlayer {};
 	};
 	
 	class Actions

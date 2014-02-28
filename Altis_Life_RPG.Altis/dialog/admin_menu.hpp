@@ -83,7 +83,16 @@ class life_admin_menu {
 			idc = -1;
 			text = "TP to ME";
 			onButtonClick = "[] call life_fnc_adminTPtoME;";
-			x = 0.24 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			x = 0.26 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.88 - (1 / 25);
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
+		class TPtoPlayer : Life_RscButtonMenu {
+			idc = -1;
+			text = "Teleport to";
+			onButtonClick = "[] call life_fnc_adminTPtoPlayer;";
+			x = 0.42 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.88 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
