@@ -18,7 +18,7 @@ class sohHud {
 	onLoad = "uiNamespace setVariable ['sohHud', _this select 0]";
 	
 	class controlsBackground {
-		class sohHud_Vehicle:w_RscText
+		class sohHud_Vehicle:Life_RscHud
 		{
 			idc = hud_vehicle_idc;
 			type = CT_STRUCTURED_TEXT;
