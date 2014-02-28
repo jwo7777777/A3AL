@@ -16,7 +16,7 @@ _sec = if(handgunWeapon _unit != "") then { getText(configFile >> "CfgWeapons" >
 _vest = if(vest _unit != "") then { getText(configFile >> "CfgWeapons" >> (vest _unit) >> "DisplayName")} else {"None"};
 _uni = if(uniform _unit != "") then { getText(configFile >> "CfgWeapons" >> (uniform _unit) >> "DisplayName")} else {"None"};
 _bp = if(backpack _unit != "") then { getText(configFile >> "CfgWeapons" >> (backpack _unit) >> "DisplayName")} else {"None"};
-_loc = getpos player;
+_loc = getpos _unit;
 
 _attach = [];
 if(primaryWeapon _unit != "") then
