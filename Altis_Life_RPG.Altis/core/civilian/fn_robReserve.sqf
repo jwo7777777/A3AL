@@ -11,7 +11,7 @@ _funds = [_this,1,-1,[0]] call BIS_fnc_param;
 _toFar = false;
 
 if(isNull _vault OR _funds == -1) exitWith {}; //Bad data
-if(player distance _vault > 10) exitWith {[[_vault,-1],"STS_fnc_robberyState",false,false] spawn life_fnc_MP; hint "You were to stay within 10m of the vault!"};
+if(player distance _vault > 10) exitWith {[[_vault,-1],"STS_fnc_robberyState",false,false] spawn life_fnc_MP; hint "You have to be within 10m of the vault!"};
 
 if(_funds < 50000) exitWith{[[_vault,-1],"STS_fnc_robberyState",false,false] spawn life_fnc_MP; hint "There wasn't enough funds in the reserve...";};
 
@@ -36,7 +36,7 @@ switch(true) do
 {
 	case (_toFar):
 	{
-		hint "You went to far from the safe, the robbery has failed!";
+		hint "You went too far from the safe, the robbery has failed!";
 		[[_vault,0],"STS_fnc_robberyState",false,false] spawn life_fnc_MP;
 	};
 	
