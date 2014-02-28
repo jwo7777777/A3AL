@@ -14,6 +14,7 @@
 #include "gcam_config.hpp"
 #include "gcam_component.hpp"
 #include "ui.hpp"
+#include "vehicle_hud.hpp"
 #include "admin_menu.hpp"
 #include "cell_phone.hpp"
 #include "wanted_list.hpp"

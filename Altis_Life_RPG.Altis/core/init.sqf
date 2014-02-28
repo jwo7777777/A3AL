@@ -61,7 +61,7 @@ diag_log "Display 46 Found";
 player addRating 99999999;
 //[] execVM "core\client\init_survival.sqf";
 diag_log "------------------------------------------------------------------------------------------------------";
-diag_log format["                End of Stratis Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
+diag_log format["                End of Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
 diag_log "------------------------------------------------------------------------------------------------------";
 life_sidechat = true;
 [[player,life_sidechat,playerSide],"STS_fnc_managesc",false,false] spawn life_fnc_MP;

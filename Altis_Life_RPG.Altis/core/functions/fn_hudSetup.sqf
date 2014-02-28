@@ -1,9 +1,9 @@
 /*
 	File: fn_hudSetup.sqf
-	Author: Bryan "Tonic" Boardwine
+	Author: Bryan "Tonic" Boardwine + soh changes
 	
 	Description:
-	Setups the hud for the player?
+	Sets up the hud for the player?
 */
 private["_display","_alpha","_version","_p","_pg"];
 disableSerialization;
@@ -12,16 +12,20 @@ _alpha = _display displayCtrl 1001;
 _version = _display displayCtrl 1000;
 
 2 cutRsc ["playerHUD","PLAIN"];
+1000 cutRsc ["sohHud","PLAIN"];
 _version ctrlSetText format["BETA: 0.%1.%2",(productVersion select 2),(productVersion select 3)];
 [] call life_fnc_hudUpdate;
 
-[] spawn
+if (!life_hud_looping) then
 {
-	private["_dam"];
-	while {true} do
+	[] spawn
 	{
-		_dam = damage player;
-		waitUntil {(damage player) != _dam};
-		[] call life_fnc_hudUpdate;
+		private["_dam"];
+		while {true} do
+		{
+			sleep 1;
+			[] call life_fnc_hudUpdate;
+		};
+		life_hud_looping = false;
 	};
 };
