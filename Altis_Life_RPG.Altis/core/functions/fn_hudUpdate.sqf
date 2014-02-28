@@ -5,12 +5,11 @@
 	Description:
 	Updates the HUD when it needs to.
 */
-private["_ui","_ui2","_food","_water","_health", "_tempstring", "_yoffset", "_vehicle", "_hudVehicle", "_x", "_y"];
+private["_ui","_food","_water","_health", "_tempstring", "_yoffset", "_vehicle", "_hudVehicle", "_x", "_y"];
 disableSerialization;
 
 _ui = uiNameSpace getVariable ["playerHUD",displayNull];
-_ui2 = uiNameSpace getVariable ["sohHud", displayNull];
-if((isNull _ui) or (isNULL _ui2)) then {[] call life_fnc_hudSetup;};
+if(isNull _ui) then {[] call life_fnc_hudSetup;};
 _food = _ui displayCtrl 23500;
 _water = _ui displayCtrl 23510;
 _health = _ui displayCtrl 23515;
