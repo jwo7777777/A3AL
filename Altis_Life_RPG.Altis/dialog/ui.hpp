@@ -37,6 +37,23 @@
 				x = safeZoneX+safeZoneW-0.11; y = safeZoneY+safeZoneH-0.445;
 				w = 0.02; h = 0.03;
 			};
+			class sohHud_Vehicle:Life_RscHud
+			{
+			idc = 3601;
+			type = 13;
+			size = 0.040;
+			x = safeZoneX + (safeZoneW * (1 - (0.42 / SafeZoneW)));
+                        y = safeZoneY + (safeZoneH * (1 - (0.30 / SafeZoneH)));
+			w = 0.4; h = 0.65;
+			colorText[] = {1,1,1,1};
+			lineSpacing = 3;
+			colorBackground[] = {0,0,0,0};
+			text = "";
+			shadow = 2;
+			class Attributes {
+				align = "right";
+				};
+			};
 		};
 		
 		class controls

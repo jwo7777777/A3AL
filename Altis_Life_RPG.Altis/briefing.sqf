@@ -1,7 +1,7 @@
 waitUntil {!isNull player && player == player};
 if(player diarySubjectExists "rules")exitwith{};
 
-player createDiarySubject ["sealteamsloth","Seal Team Sloth"];
+player createDiarySubject ["sealteamsloth","Shadow of Humanity"];
 player createDiarySubject ["changelog","Change Log"];
 player createDiarySubject ["serverrules","General Rules"];
 player createDiarySubject ["policerules","Police Procedures/Rules"];
@@ -35,7 +35,7 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Custom Change Log",
 				"
-					This section is meant for people doing their own edits to the mission, DO NOT REMOVE THE ABOVE.
+					There is now no need to USE the pickaxe.  You must have one in your inventory to mine, but just scroll wheel.
 				"
 		]
 	];
@@ -211,8 +211,8 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Teamspeak",
 				"
-				Seal Team Sloth Teamspeak can be found at:<br/><br/>
-				ts3.sealteamsloth.com:8027<br/><br/>
+				SoH Teamspeak can be found at:<br/><br/>
+				Sorry, no public TS at this time.<br/><br/>
 				"
 		]
 	];
@@ -221,7 +221,7 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Website/Forums",
 				"
-				www.sealteamsloth.com<br/>
+				shadowofhumanity.enjin.com<br/>
 				This is also where ban appeals will be made.<br/><br/>
 				"
 		]
@@ -231,7 +231,7 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Wiki",
 				"
-				http://sealteamsloth.wikia.com/<br/><br/>
+				Sorry, no wiki at the moment.<br/><br/>
 				"
 		]
 	];
@@ -241,7 +241,7 @@ player createDiarySubject ["controls","Controls"];
 			"Donations",
 				"
 				Donations keep the server running, anything and everything helps.<br/><br/>
-				sealteamsloth.com/donate<br/><br/>
+				shadowofhumanity.enjin.com<br/><br/>
 				"
 		]
 	];
@@ -487,7 +487,7 @@ player createDiarySubject ["controls","Controls"];
 				8. Patrol Officer<br/>
 				9. Cadet<br/><br/>
 
-				Cops in game who are not enrolled/accepted into the SPD are the lowest tier and have no say in police operations.<br/><br/>
+				Cops in game who are not enrolled/accepted into the SoHPD are the lowest tier and have no say in police operations.<br/><br/>
 				"
 		]
 	];
@@ -507,7 +507,7 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Teamspeak Rule",
 				"
-				1. All cops must be on Teamspeak 3 in a designated cop channel. Failure to be on Teamspeak during an admin check will result in your immediate dismissal from the server.<br/>
+				1. When Teamspeak is available, All cops must be on Teamspeak 3 in a designated cop channel. Failure to be on Teamspeak during an admin check will result in your immediate dismissal from the server.<br/>
 				2. Please join Teamspeak BEFORE you spawn in as a cop, heck, join Teamspeak before you even join the server.<br/><br/>
 				"
 		]
