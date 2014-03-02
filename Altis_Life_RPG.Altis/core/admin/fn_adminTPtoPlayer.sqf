@@ -5,21 +5,21 @@
 	Description:
 	Teleports the admin to a player.
 */
-private["_ret","_unit","_loc"];
-_ret = _this;
-_unit = _ret select 3;
+private["_unit","_loc","_altitude"];
+_unit = lbData[2902,lbCurSel (2902)];
+_unit = call compile format["%1", _unit];
+if(isNil "_unit") exitwith {};
+if(isNull _unit) exitWith {};
+_altitude = 0;
 
 if (_unit == player) exitWith { hint "You are already here."; };
 
 _loc = getpos _unit;
 
-hint format "WHOOSH!!!";
+hint "WHOOSH!!!";
 
-if ((vehicle player isKindOf "Air")) then{
+if ((vehicle player) isKindOf "Air") then { _altitude = 100;};
 
-	(vehicle player) setpos [_loc select 0, _loc select 1, 100];
-	player setVariable["lastPos",0, true];
-} else {
-    
-    (vehicle player) setpos [_loc select 0, _loc select 1, 0];
-};
+(vehicle player) setpos [_loc select 0, _loc select 1, _altitude];
+closeDialog 0;
+closeDialog 0;
