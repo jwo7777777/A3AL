@@ -38,6 +38,7 @@
 // Mouse L Click (on marker)      : Switch Unit
 //
 //=================================================================================
+if ( life_gcam_admin_lvl > life_adminlevel_589937 ) exitWith { hint "Insufficient Admin Level GCAM";};
 
 #include "gcam_config.hpp"
 
