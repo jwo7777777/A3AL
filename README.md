@@ -5,6 +5,10 @@ A3AL
  Hopefully including ArmA3 dedicated server setup.
  
  Release notes:
+ 
+ v1.0.3
+ [FIXED] Civ vest saving.  Overall vest item saving.
+ 
  v1.0.2
  [ADDED/CHANGED] some SoH branding and bad english
  [ADDED FEATURE] HUD will show all vehicle occupant names and their positions (driver/gunner/cargo) when in vehicle. Props to [404] Gaming for the code and icons.
