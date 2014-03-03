@@ -28,10 +28,12 @@ _health ctrlSetPosition [safeZoneX+safeZoneW-0.090,safeZoneY+safeZoneH-0.456];
 _health ctrlSetText format["%1", round((1 - (damage player)) * 100)];
 _health ctrlCommit 0;
 
+_tempString = "";
+_yOffset = 0.24;
+
 if(player != vehicle player) then
 {
-	_tempString = "";
-	_yOffset = 0.24;
+
 	_vehicle = assignedVehicle player;
 
 	{
@@ -54,10 +56,10 @@ if(player != vehicle player) then
 			_yOffset = _yOffset + 0.04;
 		};    
 	} forEach crew _vehicle;
-
-	_hudVehicle ctrlSetStructuredText parseText _tempString;
-	_x = safeZoneX + (safeZoneW * (1 - (0.42 / SafeZoneW)));
-	_y = safeZoneY + (safeZoneH * (1 - (_yOffset / SafeZoneH)));
-	_hudVehicle ctrlSetPosition [_x, _y, 0.4, 0.65];
-	_hudVehicle ctrlCommit 0;
 };
+
+_hudVehicle ctrlSetStructuredText parseText _tempString;
+_x = safeZoneX + (safeZoneW * (1 - (0.42 / SafeZoneW)));
+_y = safeZoneY + (safeZoneH * (1 - (_yOffset / SafeZoneH)));
+_hudVehicle ctrlSetPosition [_x, _y, 0.4, 0.65];
+_hudVehicle ctrlCommit 0;

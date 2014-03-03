@@ -64,9 +64,9 @@ class life_admin_menu {
 			idc = -1;
 			text = "Close";
 			onButtonClick = "closeDialog 0;";
-			x = -0.06 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			x = -0.03 + (5 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.88 - (1 / 25);
-			w = (6.25 / 40);
+			w = (5 / 40);
 			h = (1 / 25);
 		};
 		
@@ -74,9 +74,36 @@ class life_admin_menu {
 			idc = -1;
 			text = "Get ID";
 			onButtonClick = "[] call life_fnc_admingetID;";
-			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			x = 0.1 + (5 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.88 - (1 / 25);
-			w = (6.25 / 40);
+			w = (5 / 40);
+			h = (1 / 25);
+		};
+		class TPtoME : Life_RscButtonMenu {
+			idc = -1;
+			text = "plyr->ME";
+			onButtonClick = "[] call life_fnc_adminTPtoME;";
+			x = 0.23 + (5 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.88 - (1 / 25);
+			w = (5 / 40);
+			h = (1 / 25);
+		};
+		class TPtoPlayer : Life_RscButtonMenu {
+			idc = -1;
+			text = "ME->plyr";
+			onButtonClick = "[] call life_fnc_adminTPtoPlayer;";
+			x = 0.36 + (5 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.88 - (1 / 25);
+			w = (5 / 40);
+			h = (1 / 25);
+		};
+		class StartGCAM : Life_RscButtonMenu {
+			idc = -1;
+			text = "GCAM";
+			onButtonClick = "closeDialog 0; closeDialog 0; [player] execVM ""dialog\gcam\gcam.sqf"";";
+			x = 0.49 + (5 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.88 - (1 / 25);
+			w = (5 / 40);
 			h = (1 / 25);
 		};
 	};

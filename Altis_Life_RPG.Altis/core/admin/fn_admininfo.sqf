@@ -5,7 +5,7 @@
 	Description:
 	Output information received to admin menu.
 */
-private["_display","_ret","_text","_unit","_prim","_sec","_vest","_uni","_bp","_attach","_tmp"];
+private["_display","_ret","_text","_unit","_prim","_sec","_vest","_uni","_bp","_attach","_tmp","_loc"];
 _ret = _this;
 disableSerialization;
 _display = findDisplay 2900;
@@ -16,6 +16,7 @@ _sec = if(handgunWeapon _unit != "") then { getText(configFile >> "CfgWeapons" >
 _vest = if(vest _unit != "") then { getText(configFile >> "CfgWeapons" >> (vest _unit) >> "DisplayName")} else {"None"};
 _uni = if(uniform _unit != "") then { getText(configFile >> "CfgWeapons" >> (uniform _unit) >> "DisplayName")} else {"None"};
 _bp = if(backpack _unit != "") then { getText(configFile >> "CfgWeapons" >> (backpack _unit) >> "DisplayName")} else {"None"};
+_loc = getpos _unit;
 
 _attach = [];
 if(primaryWeapon _unit != "") then
@@ -30,5 +31,5 @@ if(primaryWeapon _unit != "") then
 };
 
 if(count _attach == 0) then {_attach = "None"};
-_text ctrlSetStructuredText parseText format["Name: %1<br/>Bank: %2<br/>Money: %3<br/>Uniform: %4<br/>Vest: %5<br/>Backpack: %6<br/>Primary: %7<br/>Handgun: %8<br/><t align='center'>Primary Attachments</t><br/>%9",
-name _unit,[_ret select 0] call life_fnc_numberText,[_ret select 1] call life_fnc_numberText, _uni,_vest,_bp,_prim,_sec,_attach];
+_text ctrlSetStructuredText parseText format["Name: %1<br/>Bank: %2<br/>Money: %3<br/>Uniform: %4<br/>Vest: %5<br/>Backpack: %6<br/>Primary: %7<br/>Handgun: %8<br/><t align='center'>Primary Attachments</t><br/>%9<br/>Location: %10",
+name _unit,[_ret select 0] call life_fnc_numberText,[_ret select 1] call life_fnc_numberText, _uni,_vest,_bp,_prim,_sec,_attach,_loc];
