@@ -72,7 +72,7 @@ if(_handgun != "") then {[_handgun,true,false,false,false] spawn life_fnc_handle
 
 {_handle = [_x,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};} foreach _items;
 {[_x,true,false,false,true] call life_fnc_handleItem;} foreach (_uitems);
-{[_x,true,false,false,true] call life_fnc_handleItem;} foreach (_vitems);
+{[_x,true,true,false,true] call life_fnc_handleItem;} foreach (_vitems);
 {[_x,true,true,false,false] call life_fnc_handleItem;} foreach (_bitems);
 {[_x,true,false,true,false] call life_fnc_handleItem;} foreach (_primitems);
 {[_x,true,false,true,false] call life_fnc_handleItem;} foreach (_secitems);
