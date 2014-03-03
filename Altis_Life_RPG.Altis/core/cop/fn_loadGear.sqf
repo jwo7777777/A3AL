@@ -58,8 +58,15 @@ removeHeadGear player;
 } foreach (assignedItems player);
 
 //Add the gear
-if(_uniform != "") then {_handle = [_uniform,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+// putting vest first forces vest items to be inserted into the vest
+// if uniform were already present, then it might receive the items
 if(_vest != "") then {_handle = [_vest,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+{[_x,true,false,false,true] call life_fnc_handleItem;} foreach (_vitems);
+
+// override necessary so that the item won't be installed on the player, but will be put in vest
+
+if(_uniform != "") then {_handle = [_uniform,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+
 if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 {
 	_handle = [_x,true,false,false,false] spawn life_fnc_handleItem;
@@ -72,7 +79,6 @@ if(_handgun != "") then {[_handgun,true,false,false,false] spawn life_fnc_handle
 
 {_handle = [_x,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};} foreach _items;
 {[_x,true,false,false,true] call life_fnc_handleItem;} foreach (_uitems);
-{[_x,true,true,false,true] call life_fnc_handleItem;} foreach (_vitems);
 {[_x,true,true,false,false] call life_fnc_handleItem;} foreach (_bitems);
 {[_x,true,false,true,false] call life_fnc_handleItem;} foreach (_primitems);
 {[_x,true,false,true,false] call life_fnc_handleItem;} foreach (_secitems);
