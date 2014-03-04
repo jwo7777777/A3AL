@@ -79,4 +79,6 @@ life_fnc_moveIn = compileFinal
 
 setPlayerRespawnTime life_respawn_timer; //Set our default respawn time.
 [] execVM "core\monitor_esc.sqf";
-[] execVM "servertools\displayPOSASLxzy.sqf";
+
+// uncomment to get hints about location in SQM format
+// [] execVM "servertools\displayPOSASLxzy.sqf";
