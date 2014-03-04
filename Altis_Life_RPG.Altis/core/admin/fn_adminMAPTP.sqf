@@ -13,7 +13,7 @@ if ( life_teleport_admin_lvl > __GETC__(life_adminlevel_589937) ) then { hint "I
 
 else
 {
-hint "Left click on map.";
+hint "Left click on map. DON'T CLICK OVER WATER!";
 onMapSingleClick "(vehicle player) setPos _pos; _ported = true; true; onMapSingleClick """";";
 
 if ( !visibleMap ) then { openMap true;};
