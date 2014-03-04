@@ -1,3 +1,5 @@
+#include <macro.h>
+
 /*
 	File: fn_adminMAPTP.sqf
 	Author: soh
