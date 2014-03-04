@@ -1,5 +1,5 @@
-author = "TAW_Tonic - customizations by SoH";
-onLoadName = "Altis Life RPG v3.1.1 - Customized";
+author = "TAW_Tonic";
+onLoadName = "Altis Life RPG v3.1.1";
 onLoadMission = "A RPG game mode developed by TAW_Tonic";
 joinUnassigned = 1;
 respawn = BASE;
