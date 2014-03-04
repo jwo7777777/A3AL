@@ -97,11 +97,20 @@ class life_admin_menu {
 			w = (5 / 40);
 			h = (1 / 25);
 		};
+		class MAPTP : Life_RscButtonMenu {
+			idc = -1;
+			text = "MAPTP";
+			onButtonClick = "[] spawn life_fnc_adminMAPTP;";
+			x = 0.49 + (5 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.88 - (1 / 25);
+			w = (5 / 40);
+			h = (1 / 25);
+		};
 		class StartGCAM : Life_RscButtonMenu {
 			idc = -1;
 			text = "GCAM";
-			onButtonClick = "closeDialog 0; closeDialog 0; [player] execVM ""dialog\gcam\gcam.sqf"";";
-			x = 0.49 + (5 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			onButtonClick = "[player] execVM ""dialog\gcam\gcam.sqf"";";
+			x = 0.62 + (5 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.88 - (1 / 25);
 			w = (5 / 40);
 			h = (1 / 25);
