@@ -261,7 +261,7 @@ compileFinal "
 //Admin To One Person
 fnc_cell_adminmsg =
 compileFinal "
-	if((call life_adminlevel_877344) < 1) exitWith {hint ""You are not an admin!"";};
+	if((call life_adminlevel_589937) < 1) exitWith {hint ""You are not an admin!"";};
 	private[""_msg"",""_to""];
 	_msg = ctrlText 3003;
 	_to = call compile format[""%1"",(lbData[3004,(lbCurSel 3004)])];
@@ -275,7 +275,7 @@ compileFinal "
 
 fnc_cell_adminmsgall =
 compileFinal "
-	if((call life_adminlevel_877344) < 1) exitWith {hint ""You are not an admin!"";};
+	if((call life_adminlevel_589937) < 1) exitWith {hint ""You are not an admin!"";};
 	private[""_msg"",""_from""];
 	_msg = ctrlText 3003;
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";};
@@ -330,7 +330,7 @@ compileFinal "
 		
 		case 2 :
 		{
-			if((call life_adminlevel_877344) < 1) exitWith {};
+			if((call life_adminlevel_589937) < 1) exitWith {};
 			private[""_message""];
 			_message = format[""???ADMIN REQUEST FROM %1: %2"",_from,_msg];
 			hint parseText format [""<t color='#ffcefe'><t size='2'><t align='center'>Admin Request<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>Admins<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2"",_from,_msg];
@@ -348,7 +348,7 @@ compileFinal "
 			
 			[""AdminMessage"",[""You Have Received A Message From An Admin!""]] call bis_fnc_showNotification;
 			systemChat _message;
-			if((call life_adminlevel_877344) > 0) then {systemChat _admin;};
+			if((call life_adminlevel_589937) > 0) then {systemChat _admin;};
 		};
 		
 		case 4 :
@@ -360,7 +360,7 @@ compileFinal "
 			
 			[""AdminMessage"",[""You Have Received A Message From An Admin!""]] call bis_fnc_showNotification;
 			systemChat _message;
-			if((call life_adminlevel_877344) > 0) then {systemChat _admin;};
+			if((call life_adminlevel_589937) > 0) then {systemChat _admin;};
 		};
 	};
 ";

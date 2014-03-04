@@ -1,3 +1,5 @@
+#include <macro.h>
+
 /*
 	File: fn_adminTPtoME.sqf
 	Author: soh based on BLuePhoenix's admin tools for DayzEpoch
@@ -13,13 +15,14 @@ if(isNull _unit) exitWith {};
 
 if (_unit == player) exitWith { hint "Teleporting to self would create a scripting black hole ... no thanks!"; };
 
-if ( life_teleport_admin_lvl > life_adminlevel_589937 ) exitWith { hint "Insufficient Admin Level plyr->ME";};
+if ( life_teleport_admin_lvl > __GETC__(life_adminlevel_589937) ) then 
+	{ hint "Insufficient Admin Level plyr->ME";}
+else
+{
 
-_loc = getpos player;
+	_loc = getpos player;
 
-hint format ["Teleporting %1", name _unit];
-_unit setpos [ _loc select 0, _loc select 1, 0];
+	hint format ["Teleporting %1", name _unit];
+	_unit setpos [ _loc select 0, _loc select 1, 0];
 
-closeDialog 0;
-sleep 0.25;
-closeDialog 0;
+};
