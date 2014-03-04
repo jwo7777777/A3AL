@@ -22,6 +22,7 @@ switch (playerSide) do
 			};
 		} foreach life_licenses;
 		_packet set[count _packet,_array];
+		[] call life_fnc_saveGear;
 		_gear = cop_gear;
 		_packet set[count _packet,_gear];
 	};
