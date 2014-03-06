@@ -13,7 +13,7 @@ class GCam_DialogBase_Static
 	shadow = 2;
 	colorBackground[] = {0,0,0,0.4};
 	colorText[] = {1,1,1,1};
-	font = "Zeppelin32";
+	font = "puristaMedium";
 	sizeEx = 0.02;
 	text = "";
 };
@@ -316,7 +316,7 @@ class GCam_DialogBase_ListBox
 	style = 0;
 	w = LISTWIDTH;
 	h = LISTHEIGHT;
-	font = "Zeppelin32";
+	font = "puristaMedium";
 	shadow = 2;
 	sizeEx = 0.030;
 	//color[] = {1,0,1,1};
@@ -362,7 +362,7 @@ class GCam_DialogBase_Button
 	h = BUTTONHEIGHT;
 	shadow = 2;
 	text = "";
-	font = "Zeppelin32";
+	font = "puristaMedium";
 	sizeEx = BUTTONFONTSIZE;
 	colorText[] = {0.874, 0.843, 0.647, 1.0}; // text
 	colorDisabled[] = {0, 0, 0, 0};
@@ -404,7 +404,7 @@ class GCam_DialogBase_StructuredText
 	shadow = 2;
 	class Attributes
 	{
-		font = "Zeppelin32";
+		font = "puristaMedium";
 		color = "#e0d8a0"; // 0.8784, 0.8471, 0.651
 		align = "left";
 		valign = "middle";
@@ -420,7 +420,7 @@ class GCam_DialogBase_Edit
 {
 	type = 2;
 	style = 0;
-	font = "Zeppelin32";
+	font = "puristaMedium";
 	x = 0.0;
 	y = 0.0;
 	w = 0.2;
@@ -446,7 +446,7 @@ class GCam_DialogBase_EditMulti
 	w = LISTWIDTH;
 	h = LISTHEIGHT;
 	sizeEx = 0.026;
-	font = "Zeppelin32";
+	font = "puristaMedium";
 	text = "";
 	colorText[] = {0.8784,0.8471,0.651,1.0};
 	colorSelection[] = {0.2,0.6,1,0.4};
@@ -480,7 +480,7 @@ class GCam_DialogBase_Combo
 	color[] = {0.8784,0.8471,0.651,0.6}; // frame
 	colorActive[] = {0,0,0,1};
 	colorDisabled[] = {0,0,0,0.3};
-	font = "Zeppelin32";
+	font = "puristaMedium";
 	sizeEx = 0.035;
 	soundSelect[] = {"",0.1,1};
 	soundExpand[] = {"",0.1,1};
@@ -513,7 +513,7 @@ class GCam_DialogBase_RscStructuredText
 	text = "";
 	class Attributes
 	{
-		font = "Zeppelin32";
+		font = "puristaMedium";
 		color = "#FFFFFF";
 		shadowColor = "#000000";
 		align = "left";
@@ -599,6 +599,7 @@ class GCam_Dialog
 			onMouseMoving =  "GCam_OCL = _this";
 			onKeyDown = "GCam_KeyDown_List = _this";
 			onLBSelChanged = "GCam_LSC = _this";
+			colorDisabled[] = {};
 		};
 		class Combo_ListViewMode : GCam_DialogBase_Combo
 		{

@@ -21,6 +21,8 @@ class Life_Client_Core
 		class adminQuery {};
 		class adminTPtoME {};
 		class adminTPtoPlayer {};
+		class adminMAPTP {};
+		class adminGCAM {};
 	};
 	
 	class Actions
