@@ -9,6 +9,7 @@ class Life_Client_Core
 		class setupEVH {};
 		class initCiv {};
 		class initCop {};
+		class welcomeNotification {};
 	};
 	
 	class Admin
@@ -163,6 +164,7 @@ class Life_Client_Core
 		class pulloutVeh {};
 		class nearUnits {};
 		class fedSuccess {};
+		class actionKeyHandler {};
 	};
 	
 	class Network
@@ -188,6 +190,7 @@ class Life_Client_Core
 		class robReceive {};
 		class robPerson {};
 		class removeLicenses {};
+		class zoneCreator {};
 	};
 	
 	class Vehicle
@@ -200,6 +203,7 @@ class Life_Client_Core
 		class vehStoreItem {};
 		class vehTakeItem {};
 		class vehInventory {};
+		class vInteractionMenu {};
 	};
 	
 	class Cop
@@ -221,6 +225,10 @@ class Life_Client_Core
 		class spikeStripEffect {};
 		class radar {};
 		class questionDealer {};
+		class copInteractionMenu {};
+		class sirenLights {};
+		class licenseCheck {};
+		class licensesRead {};
 	};
 	
 	class Gangs

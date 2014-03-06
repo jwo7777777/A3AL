@@ -1,7 +1,7 @@
 [] spawn  {
-	while{true} do
+	private["_fnc_food","_fnc_water"];
+	_fnc_food = 
 	{
-		sleep 900;
 		if(life_hunger < 2) then {player setDamage 1; hint "You have starved to death.";}
 		else
 		{
@@ -15,26 +15,31 @@
 			};
 		};
 	};
-};
-
-[] spawn  {
-while{true} do
-{
-	sleep 600;
-	if(life_thirst < 2) then {player setDamage 1; hint "You have died from dehydration.";}
-	else
+	
+	_fnc_water = 
 	{
-		life_thirst = life_thirst - 10;
-		[] call life_fnc_hudUpdate;
-		if(life_thirst < 2) then {player setDamage 1; hint "You have died from dehydration.";};
-		switch(life_thirst) do 
+		if(life_thirst < 2) then {player setDamage 1; hint "You have died from dehydration.";}
+		else
 		{
-			case 30: {hint"You haven't drank anything in awhile, You should find something to drink soon.";};
-			case 20: {hint "You haven't drank anything in along time, you should find something to drink soon or you'll start to die from dehydration"; player setFatigue 1;};
-			case 10: {hint "You are now suffering from severe dehydration find something to drink quickly!"; player setFatigue 1;};
+			life_thirst = life_thirst - 10;
+			[] call life_fnc_hudUpdate;
+			if(life_thirst < 2) then {player setDamage 1; hint "You have died from dehydration.";};
+			switch(life_thirst) do 
+			{
+				case 30: {hint"You haven't drank anything in awhile, You should find something to drink soon.";};
+				case 20: {hint "You haven't drank anything in along time, you should find something to drink soon or you'll start to die from dehydration"; player setFatigue 1;};
+				case 10: {hint "You are now suffering from severe dehydration find something to drink quickly!"; player setFatigue 1;};
+			};
 		};
 	};
-};
+	
+	while{true} do
+	{
+		sleep 600;
+		[] call _fnc_water;
+		sleep 250;
+		[] call _fnc_food;
+	};
 };
 
 [] spawn
@@ -55,59 +60,48 @@ while{true} do
 	};
 };
 
-//I have no idea what I am looking for in this but trying something different?
-fn_Weight =
-{
-	if(life_carryWeight > life_maxWeight) then {
-		player forceWalk true;
-		player setFatigue 1;
-	}
-		else
-	{
-		player forceWalk false;
-	};
-};
-
-LIFE_ID_MonitorWeight = ["LIFE_WeightMonitor","onEachFrame","fn_Weight"] call BIS_fnc_addStackedEventHandler;
-
-/*
 [] spawn
 {
 	while {true} do
 	{
-		waitUntil {life_carryWeight > life_maxWeight};
-		player forceWalk true;
-		player setFatigue 1;
-		hint "You are over carrying your max weight! You will not be able to run or move fast till you drop some items!";
-		waitUntil {life_carryWeight <= life_maxWeight};
-		player forceWalk false;
+		sleep 1.5;
+		if(life_carryWeight > life_maxWeight && !isForcedWalk player) then {
+			player forceWalk true;
+			player setFatigue 1;
+			hint "You are over carrying your max weight! You will not be able to run or move fast till you drop some items!";
+		} else {
+			if(isForcedWalk player) then {
+				player forceWalk false;
+			};
+		};
 	};
 };
-*/
 
-[] spawn  {
-private["_walkDis","_myLastPos","_MaxWalk","_runHunger","_runDehydrate"];
-_walkDis = 0;
-_myLastPos = (getPos player select 0) + (getPos player select 1);
-_MaxWalk = 1200;
-while{true} do {
-sleep 0.5;
-if(!alive player) then {_walkDis = 0;}
-else
+[] spawn  
 {
-_CurPos = (getPos player select 0) + (getPos player select 1);
-if((_CurPos != _myLastPos) && (vehicle player == player)) then
-{
-	_walkDis = _walkDis + 1;
-	if(_walkDis == _MaxWalk) then
+	private["_walkDis","_myLastPos","_MaxWalk","_runHunger","_runDehydrate"];
+	_walkDis = 0;
+	_myLastPos = (getPos player select 0) + (getPos player select 1);
+	_MaxWalk = 1200;
+	while{true} do 
 	{
-		_walkDis = 0;
-		life_thirst = life_thirst - 5;
-		life_hunger = life_hunger - 5;
-		[] call life_fnc_hudUpdate;
+		sleep 0.5;
+		if(!alive player) then {_walkDis = 0;}
+		else
+		{
+			_CurPos = (getPos player select 0) + (getPos player select 1);
+			if((_CurPos != _myLastPos) && (vehicle player == player)) then
+			{
+				_walkDis = _walkDis + 1;
+				if(_walkDis == _MaxWalk) then
+				{
+					_walkDis = 0;
+					life_thirst = life_thirst - 5;
+					life_hunger = life_hunger - 5;
+					[] call life_fnc_hudUpdate;
+				};
+			};
+			_myLastPos = (getPos player select 0) + (getPos player select 1);
+		};
 	};
-};
-_myLastPos = (getPos player select 0) + (getPos player select 1);
-};
-};
 };

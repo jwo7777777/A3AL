@@ -13,12 +13,12 @@ class CfgPatches
 
 class CfgFunctions
 {
-	class STS_DB
+	class MySQL_Database
 	{
 		tag = "DB";
 		class MySQL
 		{
-			file = "\life_server\core\DB";
+			file = "\life_server\core\MySQL";
 			class insert{};
 			class query{};
 			class update{};
@@ -33,6 +33,7 @@ class CfgFunctions
 			class queryVehicle {};
 			class queryVehicles {};
 			class bool{};
+			class mresString {};
 		};
 	};
 	
@@ -65,12 +66,12 @@ class CfgFunctions
 			class safeInventory {};
 			class safeTake {};
 			class safeStore {};
-		};	
+		};
 	};
 	
-	class STS_System
+	class TON_System
 	{
-		tag = "STS";
+		tag = "TON";
 		class System
 		{
 			file = "\life_server\core\system";

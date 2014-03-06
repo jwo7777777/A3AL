@@ -31,7 +31,7 @@ class life_admin_menu {
 		class Title : Life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 2901;
-			text = "STS Mini-Admin Menu";
+			text = "$STR_Admin_Title";
 			x = 0.1;
 			y = 0.2;
 			w = 0.6;
@@ -62,7 +62,7 @@ class life_admin_menu {
 
 		class CloseButtonKey : Life_RscButtonMenu {
 			idc = -1;
-			text = "Close";
+			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
 			x = -0.03 + (5 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.88 - (1 / 25);
@@ -72,7 +72,7 @@ class life_admin_menu {
 		
 		class AdminID : Life_RscButtonMenu {
 			idc = -1;
-			text = "Get ID";
+			text = "$STR_Admin_GetID";
 			onButtonClick = "[] call life_fnc_admingetID;";
 			x = 0.1 + (5 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.88 - (1 / 25);
@@ -97,20 +97,11 @@ class life_admin_menu {
 			w = (5 / 40);
 			h = (1 / 25);
 		};
-		class MAPTP : Life_RscButtonMenu {
-			idc = -1;
-			text = "MAPTP";
-			onButtonClick = "[] spawn life_fnc_adminMAPTP;";
-			x = 0.49 + (5 / 40) + (1 / 250 / (safezoneW / safezoneH));
-			y = 0.88 - (1 / 25);
-			w = (4 / 40);
-			h = (1 / 25);
-		};
 		class StartGCAM : Life_RscButtonMenu {
 			idc = -1;
 			text = "GCAM";
-			onButtonClick = "[] call life_fnc_adminGCAM;";
-			x = 0.62 + (5 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			onButtonClick = "closeDialog 0; closeDialog 0; [player] execVM ""dialog\gcam\gcam.sqf"";";
+			x = 0.49 + (5 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.88 - (1 / 25);
 			w = (5 / 40);
 			h = (1 / 25);

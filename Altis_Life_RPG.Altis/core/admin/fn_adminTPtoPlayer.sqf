@@ -7,7 +7,7 @@
 	Description:
 	Teleports the admin to a player.
 */
-private["_unit","_adminloc","_plyrloc","_altitude"];
+private["_unit","_loc","_altitude"];
 _unit = lbData[2902,lbCurSel (2902)];
 _unit = call compile format["%1", _unit];
 if(isNil "_unit") exitwith {};
@@ -20,21 +20,9 @@ if ( life_teleport_admin_lvl > __GETC__(life_adminlevel_589937) ) then
 else
 {
 
-_adminloc = getpos player;
-_plyrloc = getpos _unit;
-
-hint "WHOOSH!!!";
-
-_unit = player;
-
-if (vehicle _unit != _unit) then { //in a vehicle
-
-	_unit = vehicle _unit; // _unit now refers to the vehicle
-	_emptyflag = [_plyrloc select 0, _plyrloc select 1, 0] findEmptyPosition [5, 50, _unit]; //find a safe spot
-	if (_emptyflag != []) then { _plyrloc = _emptyflag;};  // if no safe spot, put it ON TOP of target
-};
-
-_unit setvelocity [0,0,0];
-_unit setpos [_plyrloc select 0, _plyrloc select 1, 0];
+	_loc = getpos _unit;
+	hint "WHOOSH!!!";
+	if ((vehicle player) isKindOf "Air") then { _altitude = 100;};
+	(vehicle player) setpos [_loc select 0, _loc select 1, _altitude];
 
 };

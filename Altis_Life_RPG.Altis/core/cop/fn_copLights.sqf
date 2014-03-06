@@ -72,6 +72,8 @@ _lightright setLightIntensity 10;
 _lightright setLightFlareSize 0.38;
 _lightright setLightFlareMaxDistance 150;
 _lightright setLightUseFlare true;
+_lightleft setLightDayLight true;
+_lightright setLightDayLight true;
 
 _leftRed = true;  
 while{ (alive _vehicle)} do  

@@ -16,9 +16,11 @@ _ret = owner _ret;
 _list = [];
 {
 	_uid = _x select 1;
-	if([_uid] call STS_fnc_isUIDActive) then
+	if([_uid] call TON_fnc_isUIDActive) then
 	{
-		_list set[count _list,_x];
+		if(_x distance (getMarkerPos "jail_marker") > 120) then {
+			_list set[count _list,_x];
+		};
 	};
 } foreach life_wanted_list;
 [[_list],"life_fnc_wantedList",_ret,false] spawn life_fnc_MP;

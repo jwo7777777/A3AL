@@ -27,6 +27,7 @@ life_spikestrip = ObjNull;
 life_respawn_timer = 35;
 life_has_insurance = false;
 life_knockout = false;
+life_interrupted = false;
 life_hud_looping = false;
 life_teleport_admin_lvl = 3;
 life_gcam_admin_lvl = 2;
