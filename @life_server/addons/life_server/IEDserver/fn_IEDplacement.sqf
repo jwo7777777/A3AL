@@ -29,5 +29,6 @@ _device = "ATMine" createMine _loc; // Explosive for mine detector and disarming
 
 IEDnew = [ _IEDvehicle, _device, _boom ];
 IEDlist set [count IEDlist, IEDnew];
+publicVariable "IEDlist";
 [IEDnew,"IED_fnc_IEDtriggers",west] spawn BIS_fnc_MP;
 

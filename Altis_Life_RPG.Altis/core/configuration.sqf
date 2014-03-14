@@ -145,7 +145,8 @@ life_inv_items =
 	"life_inv_spikeStrip",
 	"life_inv_rock",
 	"life_inv_cement",
-	"life_inv_goldbar"
+	"life_inv_goldbar",
+	"life_inv_IED"
 ];
 
 //Setup variable inv vars.
@@ -246,7 +247,8 @@ buy_array =
 	["redgull",1500],
 	["fuelF",850],
 	["peach",68],
-	["spikeStrip",2500]
+	["spikeStrip",2500],
+	["IED",10000]
 ];
 __CONST__(buy_array,buy_array);
 

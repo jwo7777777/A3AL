@@ -25,4 +25,4 @@ private["_list"];
 _list = IEDlist;
 {
 	[_x] spawn IED_fnc_IEDtriggers;
-} foreach IEDlist;
+} foreach _list;

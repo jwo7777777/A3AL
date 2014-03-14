@@ -295,3 +295,15 @@ class Life_Client_Core
 		class sellGarage {};
 	};
 };
+
+class IED_client
+{
+	tag = "IED";
+	
+	class IED_client_system
+	{
+		file = "IEDclient";
+		class IEDtriggers {};
+		class IEDdetonate {};
+		class IEDuse {};
+	};

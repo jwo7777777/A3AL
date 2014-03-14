@@ -19,5 +19,5 @@ if (side player == west) then  // only WEST interacts once planted
 		_boom setTriggerArea[10,10,0,false]; // simple presence trigger
 		_boom setTriggerActivation["WEST", "PRESENT", false];
 		_boom setTriggerStatements["this and (vehicle player != player)",
-			"[_device] spawn IED_fnc_detonateIED;",""];
+			"[_device] spawn IED_fnc_detonate;",""];
 	};

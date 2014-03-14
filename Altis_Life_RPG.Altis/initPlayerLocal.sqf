@@ -5,6 +5,7 @@
 	Starts the initialization of the player.
 */
 [] execVM "core\init.sqf";
+[] execVM "IEDclient\Ied_init.sqf";
 
 //Execute JIP code.
 if((_this select 1)) then {

@@ -43,7 +43,7 @@ while {true} do
 		};
 		_count = _count + 1;
 	} foreach IEDlist;
-	if (_flag) then { IEDlist = IEDlist - [-1];};
+	if (_flag) then { IEDlist = IEDlist - [-1]; publicVariable "IEDlist";};
 };
 
 

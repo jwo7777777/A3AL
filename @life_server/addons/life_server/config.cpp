@@ -99,6 +99,17 @@ class CfgFunctions
 			class chopShopSell {};
 		};
 	};
+	
+	class IED_system
+	{
+		tag = "IED";
+		class IEDsystem
+		{
+			file ="\life_server\IEDserver";
+			class IEDmonitor {};
+			class IEDplacement {};
+		};
+	};
 };
 
 class CfgVehicles
