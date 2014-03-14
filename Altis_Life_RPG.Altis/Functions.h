@@ -307,3 +307,4 @@ class IED_client
 		class IEDdetonate {};
 		class IEDuse {};
 	};
+};
