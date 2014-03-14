@@ -27,14 +27,14 @@
 	to create local player triggers.  The JIP routine should do pervasive and failsafe trigger setting.
 */
 private ["_count","_flag"];
-while {true} do 
+while {true} do // loop forever ... as long as the server is running
 {
-	_count = 0;
-	_flag = false;
-	sleep 1;
+	_count = 0; // convenient variable for tracking which array member is the subject of examination
+	_flag = false;  // flags whether there is any need to delete an array member
+	sleep 1;  //  controls loop speed to once per second
 	{	
-		if ((isNull _x select 0) or (isNull _x select 1) or (isNull _x select 2)) then
-		{
+		if ((isNull _x select 0) or (isNull _x select 1) or (isNull _x select 2)) then // are any of them void
+		{  // select 0 will be void if garbage vehicle did not create, select 1 will be void if mine exploded, select 2 if trigger failed to create properly
 			if !(isNull _x select 0) then { deleteVehicle _x select 0;};  // delete garbage
 			if !(isNull _x select 1) then { deleteVehicle _x select 1;};  // delete explosive (just to be script-safe)
 			if !(isNull _x select 2) then { deleteVehicle _x select 2;};  // delete trigger (don't clutter the server)
@@ -43,7 +43,7 @@ while {true} do
 		};
 		_count = _count + 1;
 	} foreach IEDlist;
-	if (_flag) then { IEDlist = IEDlist - [-1]; publicVariable "IEDlist";};
+	if (_flag) then { IEDlist = IEDlist - [-1]; publicVariable "IEDlist";};  // if there is a change, then broadcast it.
 };
 
 

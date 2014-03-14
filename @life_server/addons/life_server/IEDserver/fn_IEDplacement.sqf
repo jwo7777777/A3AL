@@ -21,14 +21,14 @@
 	
 	Without the garbage covering the mine, a civilian could conceivably trigger it in a heavy vehicle.
 */
-private["_loc","_IEDvehicle", "_device", "_outer","_boom"];
+private["_IEDnew","_loc","_IEDvehicle", "_device", "_outer","_boom"];
 _loc = _this select 0; // passed through message event handler
-_boom = createTrigger["EmptyDetector", _loc];  // boom if in vehicle when triggered
+_boom = createTrigger["EmptyDetector", _loc];  // server has to create triggers ... it's the law
 _IEDvehicle = "Land_BarrelTrash_F" createVehicle _loc;  // IED "vehicle"
-_device = "ATMine" createMine _loc; // Explosive for mine detector and disarming
+_device = "ATMine" createMine (getpos _IEDvehicle); // Explosive for mine detector and disarming
 
-IEDnew = [ _IEDvehicle, _device, _boom ];
-IEDlist set [count IEDlist, IEDnew];
-publicVariable "IEDlist";
-[IEDnew,"IED_fnc_IEDtriggers",west] spawn BIS_fnc_MP;
+_IEDnew = [ _IEDvehicle, _device, _boom ];  // convenient variable assignment to handle items in the array
+IEDlist set [count IEDlist, _IEDnew];  // add the new vehicle-device-trigger collection to the master array
+[_IEDnew,"IED_fnc_IEDtriggers",west] spawn BIS_fnc_MP; // tell all west players to assign local trigger settings.
+publicVariable "IEDlist";  // broadcast the list so that any JIP players can synchronize with it.
 
