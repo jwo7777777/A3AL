@@ -26,24 +26,26 @@
 	There is a small corner case that an IED gets deleted while a JIP player is processing the list of active IEDs
 	to create local player triggers.  The JIP routine should do pervasive and failsafe trigger setting.
 */
-private ["_count","_flag"];
+private ["_flag"];
 while {true} do // loop forever ... as long as the server is running
 {
-	_count = 0; // convenient variable for tracking which array member is the subject of examination
 	_flag = false;  // flags whether there is any need to delete an array member
 	sleep 1;  //  controls loop speed to once per second
-	{	
-		if ((isNull _x select 0) or (isNull _x select 1) or (isNull _x select 2)) then // are any of them void
-		{  // select 0 will be void if garbage vehicle did not create, select 1 will be void if mine exploded, select 2 if trigger failed to create properly
-			if !(isNull _x select 0) then { deleteVehicle _x select 0;};  // delete garbage
-			if !(isNull _x select 1) then { deleteVehicle _x select 1;};  // delete explosive (just to be script-safe)
-			if !(isNull _x select 2) then { deleteVehicle _x select 2;};  // delete trigger (don't clutter the server)
-			_flag = true;  // we did get rid of IED, so we need to delete it from the array.
-			IEDlist set [ _count, [-1]];  // mark this entry for deletion
-		};
-		_count = _count + 1;
-	} foreach IEDlist;
-	if (_flag) then { IEDlist = IEDlist - [-1]; publicVariable "IEDlist";};  // if there is a change, then broadcast it.
+	if ((!(isNil "IEDlist")) and ((count IEDlist) > 0)) then
+	{
+		{	
+			if ((isNull (_x select 0)) or (isNull (_x select 1)) or (isNull (_x select 2))) then // are any of them void
+			{  // select 0 will be void if garbage vehicle did not create, select 1 will be void if mine exploded, select 2 if trigger failed to create properly
+				if !(isNull (_x select 0)) then { deleteVehicle (_x select 0);};  // delete garbage
+				if !(isNull (_x select 1)) then { deleteVehicle (_x select 1);};  // delete explosive (just to be script-safe)
+				if !(isNull (_x select 2)) then { deleteVehicle (_x select 2);};  // delete trigger (don't clutter the server)
+				_flag = true;  // we did get rid of IED, so we need to delete it from the array.
+				IEDlist set [ _forEachIndex, [-1]];  // mark this entry for deletion
+			};
+		} foreach IEDlist;
+		
+		if (_flag) then { IEDlist = IEDlist - [-1]; publicVariable "IEDlist";};  // if there is a change, then broadcast it.
+	};
 };
 
 

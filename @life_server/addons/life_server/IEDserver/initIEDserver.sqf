@@ -19,4 +19,4 @@ if (isNil "IEDlist") then {
 
 [] spawn IED_fnc_IEDmonitor; // loops endlessly to track active IEDs for deletion
 
-"IEDplantLOC" addpublicVariableEventHandler { if [_this select 1] call IED_fnc_IEDplacement; }; // gives server location to put an IED
+"IEDplantLOC" addpublicVariableEventHandler { [_this select 1] call IED_fnc_IEDplacement; }; // gives server location to put an IED

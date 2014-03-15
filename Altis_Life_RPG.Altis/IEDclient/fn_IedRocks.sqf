@@ -1,5 +1,7 @@
 /* Written by Brian Sweeney - [EPD] Brian*/
-_loc = _this select 0;
+private ["_loc","_aslLoc","_col","_c1","_c2","_c3","_rocks1","_rocks2","_rocks3","_rocks"];
+
+_loc = _this;
 _aslLoc = [_loc select 0, _loc select 1, getTerrainHeightASL [_loc select 0, _loc select 1]];
 _col = [0,0,0];
 _c1 = _col select 0;

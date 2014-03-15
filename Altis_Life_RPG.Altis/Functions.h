@@ -306,5 +306,12 @@ class IED_client
 		class IEDtriggers {};
 		class IEDdetonate {};
 		class IEDuse {};
+		class IedSmoke {};
+		class IedSandTrailSmoke {};
+		class IedGrayTrailSmoke {};
+		class IedBrownTrailSmoke {};
+		class IedCreateRing {};
+		class IedPlayerEffects {};
+		class IedRocks {};
 	};
 };

@@ -1,5 +1,6 @@
 //http://forums.bistudio.com/showthread.php?172864-Any-idea-how-this-was-done
-_iedPos = _this select 0;
+private ["_iedPos","_distance","_volume"];
+_iedPos = _this;
 sleep 0.25;
 if(alive player) then {
 

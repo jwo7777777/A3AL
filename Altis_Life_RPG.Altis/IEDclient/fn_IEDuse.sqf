@@ -18,7 +18,7 @@ if([false,"IED",1] call life_fnc_handleInv) then {
 	IEDplantLOC = (getpos player);
 	publicVariableServer "IEDplantLOC";
 	hint "You placed an IED!";
-	life_action_inUse = true;
+	life_action_inUse = false;
 } else {
 	hint "... some IED error";
 };
