@@ -25,4 +25,4 @@ for "_i" from 0 to _numPlumes -1 do{
 	};		
 
 };
-[_aslLoc] call IED_fnc_CreateRing;
+[_aslLoc] call IED_fnc_IedCreateRing;

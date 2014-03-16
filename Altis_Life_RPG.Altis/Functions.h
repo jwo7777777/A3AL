@@ -313,5 +313,6 @@ class IED_client
 		class IedCreateRing {};
 		class IedPlayerEffects {};
 		class IedRocks {};
+		class IEDdisarm {};
 	};
 };

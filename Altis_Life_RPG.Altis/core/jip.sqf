@@ -22,7 +22,8 @@ private["_list"];
 	};
 } foreach (allMissionObjects "Air");
 
-_list = IEDlist;
+waituntil {!lock_IEDlist};
+_list = [] + IEDlist; // simple assignment is no good, we need to copy the array
 {
 	[_x] spawn IED_fnc_IEDtriggers;
 } foreach _list;

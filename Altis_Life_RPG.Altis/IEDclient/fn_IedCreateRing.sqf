@@ -5,7 +5,7 @@ private ["_aslLoc","_smoke1","_smoke2","_smoke3","_smoke4","_smokes"];
 //.78, .76, .71 whitish color
 //.1, .1, .1 dark gray
 //0, 0, 0 black
-_aslLoc = _this select 0;
+_aslLoc = [_this, 0, [0,0,0], [], [3]] call BIS_fnc_param;
 
 _smoke1 = "#particlesource" createVehicle _aslLoc;
 _smoke1 setposasl _aslLoc;

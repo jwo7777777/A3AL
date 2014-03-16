@@ -1,8 +1,8 @@
 /* Written by Brian Sweeney - [EPD] Brian*/
 
 private ["_loc","_aslLoc","_size","_thingToFling","_smoke","_sleepTime","_currentTime"];
-_loc = _this select 0;
-_aslLoc = _this select 1;
+_loc = [_this, 0, [0,0,0], [], [3]] call BIS_fnc_param;
+_aslLoc = [_this, 1, [0,0,0], [], [3]] call BIS_fnc_param;
 
 _size = 1 + random 3;
 
