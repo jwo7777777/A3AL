@@ -60,6 +60,7 @@ switch (_mode) do
 			case "cement": {"life_inv_cement"};
 			case "rock": {"life_inv_rock"};
 			case "goldbar": {"life_inv_goldbar"};
+			case "IED": {"life_inv_IED"};
 		};
 	};
 	
@@ -111,6 +112,7 @@ switch (_mode) do
 			case "life_inv_cement": {"cement"};
 			case "life_inv_rock": {"rock"};
 			case "life_inv_goldbar": {"goldbar"};
+			case "life_inv_IED": {"IED"};
 		};
 	};
 };

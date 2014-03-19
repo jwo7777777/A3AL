@@ -34,6 +34,8 @@ publicVariable "robbery_success";
 
 //[] execFSM "\life_server\cleanup.fsm";
 
+[] execVM "\life_server\IEDserver\initIEDserver.sqf"; // IED global variable setup and monitoring
+
 [] spawn
 {
 	private["_logic","_queue"];

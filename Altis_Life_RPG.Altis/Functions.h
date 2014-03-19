@@ -295,3 +295,24 @@ class Life_Client_Core
 		class sellGarage {};
 	};
 };
+
+class IED_client
+{
+	tag = "IED";
+	
+	class IED_client_system
+	{
+		file = "IEDclient";
+		class IEDtriggers {};
+		class IEDdetonate {};
+		class IEDuse {};
+		class IedSmoke {};
+		class IedSandTrailSmoke {};
+		class IedGrayTrailSmoke {};
+		class IedBrownTrailSmoke {};
+		class IedCreateRing {};
+		class IedPlayerEffects {};
+		class IedRocks {};
+		class IEDdisarm {};
+	};
+};

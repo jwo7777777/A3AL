@@ -90,6 +90,11 @@ switch (true) do
 		hint "Just use the action menu when near a mine.";
 	};
 	
+	case (_item == "IED"):
+	{
+		[] spawn IED_fnc_IEDuse;
+	};
+	
 	default
 	{
 		hint "This item isn't usable.";
