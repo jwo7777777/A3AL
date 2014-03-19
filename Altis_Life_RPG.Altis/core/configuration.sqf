@@ -223,7 +223,7 @@ sell_array =
 	["fuelF",500],
 	["spikeStrip",1200],
 	["cement",1950],
-	["IED",50000]
+	["IED",90000]
 ];
 __CONST__(sell_array,sell_array);
 
@@ -249,7 +249,7 @@ buy_array =
 	["fuelF",850],
 	["peach",68],
 	["spikeStrip",2500],
-	["IED",10000]
+	["IED",100000]
 ];
 __CONST__(buy_array,buy_array);
 
