@@ -306,7 +306,7 @@ switch (_shop) do
 		if(__GETC__(life_coplevel_38747) > 2) then
 		{
 			_return set[count _return,
-			["B_Heli_Transport_01_F",200000]];
+			["I_Heli_light_03_unarmed_F",500000]];
 		};
 	};
 	
@@ -317,7 +317,7 @@ switch (_shop) do
 		if(__GETC__(life_coplevel_38747) > 2) then
 		{
 			_return set[count _return,
-			["B_Heli_Transport_01_F",200000]];
+			["I_Heli_light_03_unarmed_F",500000]];
 			_return set[count _return,
 			["B_MRAP_01_hmg_F",750000]];
 		};
