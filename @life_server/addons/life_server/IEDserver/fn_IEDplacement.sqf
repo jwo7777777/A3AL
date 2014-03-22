@@ -23,7 +23,9 @@ _camotype = IEDtypes call BIS_fnc_selectRandom; // pick a random item for the IE
 _IEDvehicle = _camotype createVehicle _loc;  // IED "vehicle"
 _IEDvehicle setpos _loc; // get the location exact
 _boom = createTrigger ["EmptyDetector", _loc];  // server has to create triggers ... it's the law
+_boom setVariable ["index",IEDnum,true];
 _disarm = createTrigger ["EmptyDetector", _loc];
+_disarm setVariable ["index",IEDnum,true];
 _device = createMine ["ATMine", _loc,[], 0]; // Explosive for mine detector and disarming
 _IEDvehicle enableSimulationGlobal false;  // keep toilets from opening, etc...
 _device enableSimulationGlobal false;  // mine is just for detection
@@ -38,4 +40,4 @@ IEDlist set [(count IEDlist), _IEDnew];  // add the new vehicle-device-trigger c
 publicVariable "IEDlist";  // broadcast the list so that any JIP players can synchronize with it.
 lock_IEDlist = false;
 publicVariable "lock_IEDlist";
-diag_log format["Active IEDs: %1",(count IEDlist) +1];
+diag_log format["Active IEDs: %1",(count IEDlist)];

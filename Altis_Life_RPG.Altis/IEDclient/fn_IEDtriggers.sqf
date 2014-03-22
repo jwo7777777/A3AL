@@ -24,18 +24,16 @@ _disarm = [_this,4,objNull,[objNull]] call BIS_fnc_param; // disarm radius, by t
 if ((_IEDnum == -1) or (isNull _IEDvehicle) or (isNull _device) or (isNull _boom) or (isNull _disarm))
 	exitwith {diag_log "Problem with IEDtriggers input"};
 
-IEDarray = [_IEDnum, _IEDvehicle, _device, _boom, _disarm];
-
 _boom setTriggerArea[10,10,0,false]; // simple radial trigger
 _boom setTriggerActivation["WEST", "PRESENT", false]; // west player must be within trigger area, non-repeating
 _boom setTriggerStatements["this and ((vehicle player) != player)",  // west player must be in car
-	"IEDarray spawn IED_fnc_IEDdetonate",""];  
+	"thisTrigger spawn IED_fnc_IEDdetonate",""];  
 diag_log "Detonation trigger set";
 
 _disarm setTriggerArea[5,5,0,false]; // simple radial trigger
 _disarm setTriggerActivation["WEST", "PRESENT", true]; // repeatable trigger
 _disarm setTriggerStatements["this",
-	"DisarmIDX = player addAction ['Disable IED', IED_fnc_IEDdisarm, IEDarray,6,true,true,'','true'];",
+	"DisarmIDX = player addAction ['Disable IED', IED_fnc_IEDdisarm, thisTrigger,6,true,true,'','true'];",
 	"player removeAction DisarmIDX;"];
 diag_log "Disarm trigger set";
 // adds the action for disarming at 2m
