@@ -20,7 +20,7 @@
 	There is a small corner case that an IED gets deleted while a JIP player is processing the list of active IEDs
 	to create local player triggers.  The JIP routine should do pervasive and failsafe trigger setting.
 */
-private ["_flag","_innerflag","_iednum"];
+private ["_iednum"];
 
 _iednum = [[_this],0,-1,[0]] call BIS_fnc_param;
 if (_iednum == -1) exitWith { diag_log "Bad _iednum passed to monitor.";};
@@ -29,17 +29,15 @@ waitUntil {!lock_IEDlist}; // make sure something else is not modifying IEDlist
 lock_IEDlist = true;  // reserve IEDlist for change
 publicVariable "lock_IEDlist";
 
-_flag = false; // flags whether there is any need to delete an array member
 {	
-	if (_iednum == (_x select 0)) exitWith {
-		diag_log format["IED deleted: %1",_iednum];	
+	if (_iednum == (_x select 0)) then {
+		diag_log format["IED deleted: %1", _iednum];	
 		IEDlist set [ _forEachIndex, -1];  // mark this entry for deletion
-		IEDlist = IEDlist - [-1];
-		publicVariable "IEDlist";
 	};
-	
 } foreach IEDlist;
-	
+
+IEDlist = IEDlist - [-1];
+publicVariable "IEDlist";	
 lock_IEDlist = false;
 publicVariable "lock_IEDlist";
 diag_log format["Active IEDs: %1",(count IEDlist)];

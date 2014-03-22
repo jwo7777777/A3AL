@@ -9,14 +9,27 @@
 	
 	OUTPUTS: none
 */
-private["_iedPosition", "_explosiveSequence","_explosive","_xcoord","_ycoord","_bomb","_ied","_vehicle","_boom","_disarm","_iednum"];
+private["_iedPosition", "_explosiveSequence","_explosive","_xcoord","_ycoord","_bomb","_ied","_vehicle","_boom","_disarm","_iednum","_trigger"];
 
 diag_log "IED detonation";
-_iednum = [_this,0,-1,[0]] call BIS_fnc_param;
-_vehicle = 	[_this, 1, objNull, [objNull]] call BIS_fnc_param;
-_ied = [_this, 2, objNull, [objNull]] call BIS_fnc_param;
-_boom = [_this, 3, objNull, [objNull]] call BIS_fnc_param;
-_disarm = [_this, 4, objNull, [objNull]] call BIS_fnc_param;
+_trigger = [[_this],0,objNull,[objNull]] call BIS_fnc_param;
+_iednum = _trigger getVariable ["index",-1];
+
+waitUntil {!lock_IEDlist}; // make sure something else is not modifying IEDlist
+lock_IEDlist = true;  // reserve IEDlist for change
+publicVariable "lock_IEDlist";
+
+{ if ((_x select 0) == _iednum) then {
+	_vehicle = 	[_x, 1, objNull, [objNull]] call BIS_fnc_param;
+	_ied = [_x, 2, objNull, [objNull]] call BIS_fnc_param;
+	_boom = [_x, 3, objNull, [objNull]] call BIS_fnc_param;
+	_disarm = [_x, 4, objNull, [objNull]] call BIS_fnc_param; };
+} foreach IEDlist;
+
+lock_IEDlist = false;  // reserve IEDlist for change
+publicVariable "lock_IEDlist";
+
+diag_log format ["Detonation Array: %1",[_iednum, _vehicle, _ied, _boom, _disarm]];
 
 if ((_iednum == -1) or (isNull _vehicle) or (isNull _ied) or (isNull _boom) or (isNull _disarm))
 	exitWith { diag_log "Detonation was passed an invalid device.";};
