@@ -6,6 +6,10 @@ A3AL
  
  Release notes:
  
+ Live-Server-0.0.2
+ [ADDED] IEDs
+ [CHANGED] Map and Shop locations
+ 
  v1.0.3
  [FIXED] Civ vest saving.  Overall vest item saving.
  
