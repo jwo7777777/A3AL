@@ -1,3 +1,5 @@
+#include <macro.h>
+
 //=================================================================================
 // GCam 2.0
 //
@@ -38,6 +40,7 @@
 // Mouse L Click (on marker)      : Switch Unit
 //
 //=================================================================================
+if ( life_gcam_admin_lvl > __GETC__(life_adminlevel_589937) ) exitWith { hint "Insufficient Admin Level GCAM";};
 
 #include "gcam_config.hpp"
 

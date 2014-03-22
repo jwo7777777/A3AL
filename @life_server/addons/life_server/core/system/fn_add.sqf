@@ -8,7 +8,7 @@
 	This is a gateway to the SQF->MySQL Query function, it is sort of a 
 	lazy blockage and adding untainable functions for the client to not take.
 */
-private["_unit","_side","_uid","_money","_bank","_uid","_ownerID","_misc","_handle"];
+private["_unit","_side","_uid","_money","_bank","_uid","_ownerID","_misc","_handle","_name"];
 _unit = [_this,0,ObjNull,[Objnull]] call BIS_fnc_param;
 _side = [_this,1,civilian,[sideUnknown]] call BIS_fnc_param;
 _money = [_this,2,0,[0]] call BIS_fnc_param;

@@ -43,6 +43,8 @@ switch (_filter) do
 		if(__GETC__(life_coplevel_38747) > 2) then
 		{
 			_ret set[count _ret,["H_MilCap_mcamo",nil,100]];
+			_ret set[count _ret,["H_Beret_blk_POLICE",nil,100]];
+			_ret set[count _ret,["H_Watchcap_blk",nil,100]]
 		};
 	};
 	
@@ -70,7 +72,9 @@ switch (_filter) do
 		_ret set[count _ret,["V_Rangemaster_belt",nil,800]];
 		if(__GETC__(life_coplevel_38747) > 1) then
 		{
-			_ret set[count _ret,["V_PlateCarrier2_rgr",nil,1500]];
+			_ret set[count _ret,["V_PlateCarrier1_blk",nil,1500]];
+			_ret set[count _ret,["V_BandollierB_blk",nil,1500]];
+			_ret set[count _ret,["V_TacVest_blk_POLICE",nil,1500]]
 		};
 	};
 	
@@ -83,7 +87,8 @@ switch (_filter) do
 			["B_FieldPack_cbr",nil,500],
 			["B_AssaultPack_cbr",nil,700],
 			["B_Bergen_sgg",nil,2500],
-			["B_Carryall_cbr",nil,3500]
+			["B_Carryall_cbr",nil,3500],
+			["B_UAV_01_backpack_F",nil,3500]
 		];
 	};
 };

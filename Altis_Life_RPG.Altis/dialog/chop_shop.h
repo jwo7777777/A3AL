@@ -26,7 +26,7 @@ class Chop_Shop
 		{
 			colorBackground[] = {0,0,0,0};
 			idc = -1;
-			text = "Local Chop Shop";
+			text = "$STR_ChopShop_Title";
 			x = 0.1; y = 0.2;
 			w = 0.32; h = (1 / 25);
 		};
@@ -55,7 +55,7 @@ class Chop_Shop
 		class BtnSell : Life_RscButtonMenu
 		{
 			idc = -1;
-			text = "Sell";
+			text = "$STR_Global_Sell";
 			onButtonclick = "[] call life_fnc_chopShopSell;";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
@@ -66,7 +66,7 @@ class Chop_Shop
 		class BtnClose : Life_RscButtonMenu
 		{
 			idc = -1;
-			text = "Close";
+			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0";
 			x = 0.1;
 			y = 0.8 - (1 / 25);

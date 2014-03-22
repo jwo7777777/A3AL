@@ -23,9 +23,7 @@ switch (_filter) do
 			["U_I_G_resistanceLeader_F",nil,11500],
 			["U_O_SpecopsUniform_ocamo",nil,17500],
 			["U_O_PilotCoveralls",nil,15610],
-			["U_IG_leader","Guerilla Leader",15340],
-			["U_O_GhillieSuit",nil,50000]
-		];
+			["U_IG_leader","Guerilla Leader",15340]	];
 	};
 	
 	//Hats
@@ -35,9 +33,8 @@ switch (_filter) do
 			["H_ShemagOpen_tan",nil,850],
 			["H_Shemag_olive",nil,850],
 			["H_ShemagOpen_khk",nil,800],
-			["H_HelmetO_ocamo",nil,2500],
-			["H_MilCap_oucamo",nil,1200],
-			["H_Bandanna_camo",nil,650]
+			["H_Bandanna_camo",nil,650],
+			["H_Watchcap_blk",nil,500]		
 		];
 	};
 	
@@ -63,7 +60,8 @@ switch (_filter) do
 		[
 			["V_TacVest_khk",nil,12500],
 			["V_BandollierB_cbr",nil,4500],
-			["V_HarnessO_brn",nil,7500]
+			["V_HarnessO_brn",nil,7500],
+			["V_I_G_resistanceLeader_F",nil,10000]	
 		];
 	};
 	

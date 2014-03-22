@@ -27,6 +27,7 @@ life_spikestrip = ObjNull;
 life_respawn_timer = 35;
 life_has_insurance = false;
 life_knockout = false;
+life_interrupted = false;
 life_hud_looping = false;
 life_teleport_admin_lvl = 3;
 life_gcam_admin_lvl = 2;
@@ -144,7 +145,8 @@ life_inv_items =
 	"life_inv_spikeStrip",
 	"life_inv_rock",
 	"life_inv_cement",
-	"life_inv_goldbar"
+	"life_inv_goldbar",
+	"life_inv_IED"
 ];
 
 //Setup variable inv vars.
@@ -180,7 +182,7 @@ life_licenses =
 
 life_dp_points = ["dp_1","dp_2","dp_3","dp_4","dp_5","dp_6","dp_7","dp_8","dp_9","dp_10","dp_11","dp_12","dp_13","dp_14","dp_15","dp_15","dp_16","dp_17","dp_18","dp_19","dp_20","dp_21","dp_22","dp_23","dp_24","dp_25"];
 //[shortVar,reward]
-life_illegal_items = [["heroinu",1200],["heroinp",2500],["cocaine",1500],["cocainep",3500],["marijuana",2000],["turtle",3000]];
+life_illegal_items = [["heroinu",1200],["heroinp",2500],["cocaine",1500],["cocainep",3500],["marijuana",2000],["turtle",3000],["IED",50000]];
 
 
 /*
@@ -220,7 +222,8 @@ sell_array =
 	["glass",1450],
 	["fuelF",500],
 	["spikeStrip",1200],
-	["cement",1950]
+	["cement",1950],
+	["IED",90000]
 ];
 __CONST__(sell_array,sell_array);
 
@@ -245,7 +248,8 @@ buy_array =
 	["redgull",1500],
 	["fuelF",850],
 	["peach",68],
-	["spikeStrip",2500]
+	["spikeStrip",2500],
+	["IED",100000]
 ];
 __CONST__(buy_array,buy_array);
 

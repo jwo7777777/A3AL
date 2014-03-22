@@ -51,5 +51,6 @@ switch (_item) do
 	case "rock": {6};
 	case "cement": {5};
 	case "goldbar": {12};
+	case "IED": {6};
 	default {1};
 };

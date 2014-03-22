@@ -7,11 +7,13 @@
 */
 private["_vehicle","_displayName","_upp","_ui","_progress","_pgText","_cP","_previousState"];
 _vehicle = cursorTarget;
+life_interrupted = false;
 if(isNull _vehicle) exitWith {hint "You need to look at the vehicle you want to refuel!"};
 if(!(_vehicle isKindOF "LandVehicle") && !(_vehicle isKindOf "Air") && !(_vehicle isKindOf "Ship")) exitWith {};
 if(player distance _vehicle > 7.5) exitWith {hint "You need to be closer to the vehicle!"};
 
 if(!([false,"fuelF",1] call life_fnc_handleInv)) exitWith {};
+life_action_inUse = true;
 _displayName = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
 
 _upp = format["Refuelling %1",_displayName];
@@ -37,11 +39,14 @@ while{true} do
 	_pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
 	if(_cP >= 1) exitWith {};
 	if(!alive player) exitWith {};
+	if(life_interrupted) exitWith {};
 };
+life_action_inUse = false;
 5 cutText ["","PLAIN"];
-if(!alive player) exitWith {};
-
 player playActionNow "stop";
+if(!alive player) exitWith {};
+if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"];};
+
 
 switch (true) do
 {

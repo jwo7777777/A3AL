@@ -22,7 +22,6 @@ switch (playerSide) do
 			};
 		} foreach life_licenses;
 		_packet set[count _packet,_array];
-		[] call life_fnc_saveGear;
 		_gear = cop_gear;
 		_packet set[count _packet,_gear];
 	};
@@ -43,4 +42,5 @@ switch (playerSide) do
 	};
 };
 
-[_packet,"STS_fnc_update",false,false] spawn life_fnc_MP;
+_packet set[8,name player];
+[_packet,"TON_fnc_update",false,false] spawn life_fnc_MP;

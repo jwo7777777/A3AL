@@ -14,6 +14,7 @@ _side = [_this,2,civilian,[sideUnknown]] call BIS_fnc_param;
 _money = [_this,3,"0",[""]] call BIS_fnc_param;
 _bank = [_this,4,"2500",[""]] call BIS_fnc_param;
 _misc = [_this,5,[],[[],false]] call BIS_fnc_param;
+_name = [_name] call DB_fnc_mresString; //Clense the name of bad chars.
 
 //Error checks
 if((_uid == "") OR (_name == "")) exitWith {};
@@ -51,13 +52,13 @@ switch (_side) do
 	case west:
 	{
 		_misc = [_misc] call DB_fnc_mresArray;
-		_query = format["INSERT INTO players (playerid, name, cash, bankacc, cop_gear, aliases, civ_gear) VALUES('%1', '%2', '%3', '%4', '%5', '%6', '""[]""')",_uid,_name,_money,_bank,_misc,_alias];
+		_query = format["INSERT INTO players (playerid, name, cash, bankacc, cop_gear, aliases, cop_licenses, civ_licenses, civ_gear) VALUES('%1', '%2', '%3', '%4', '%5', '%6', '""[]""', '""[]""', '""[]""')",_uid,_name,_money,_bank,_misc,_alias];
 	};
 	
 	case civilian:
 	{
 		if(typeName _misc == "BOOL") then {_misc = [_misc] call DB_fnc_bool;};
-		_query = format["INSERT INTO players (playerid, name, cash, bankacc, cop_gear, arrested, aliases, civ_gear) VALUES('%1', '%2', '%3', '%4', '""[]""','%5', '%6','""[]""')",
+		_query = format["INSERT INTO players (playerid, name, cash, bankacc, arrested, aliases, civ_gear, cop_licenses, civ_licenses, cop_gear) VALUES('%1', '%2', '%3', '%4', '%5', '%6','""[]""', '""[]""', '""[]""', '""[]""')",
 		_uid, //1
 		_name, //2 
 		_money,//3
